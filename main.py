@@ -5,6 +5,7 @@ from langchain_ollama.chat_models import ChatOllama
 
 load_dotenv(".env")
 
+
 def main():
     print("Hello from langchain-explore!")
     information = """
@@ -19,7 +20,6 @@ Musk was the largest donor in the 2024 U.S. presidential election, and is a supp
 Musk's political activities, views, and statements have made him a polarizing figure, especially following the COVID-19 pandemic. He has been criticized for making unscientific and misleading statements, including COVID-19 misinformation and promoting conspiracy theories, and affirming antisemitic, racist, and transphobic comments. His acquisition of Twitter was controversial due to a subsequent increase in hate speech and the spread of misinformation on the service. His role in the second Trump administration attracted public backlash, particularly in response to DOGE.
     """
 
-
     summary_template = """
     Given the information {information} about a person I want you to create:
     1. A short summary
@@ -27,8 +27,7 @@ Musk's political activities, views, and statements have made him a polarizing fi
     """
 
     summary_prompt_template = PromptTemplate(
-        input_variables=["information"],
-        template=summary_template
+        input_variables=["information"], template=summary_template
     )
 
     # llm = ChatOpenAI(temperature=0, model="gpt-4o-mini")
@@ -40,7 +39,6 @@ Musk's political activities, views, and statements have made him a polarizing fi
 
     print(response.content)
 
+
 if __name__ == "__main__":
     main()
-
-    
