@@ -10,12 +10,13 @@ from langchain_openai import ChatOpenAI
 
 load_dotenv()
 
+
 @tool
 def get_text_length(text: str) -> int:
     """Returns the length of a text by characters"""
     print(f"get_text_length enter with {text=}")
     text = text.strip("'\n").strip('"')
-    
+
     return len(text)
 
 
@@ -23,7 +24,7 @@ def find_tool_by_name(tools: List[Tool], tool_name: str):
     for tool in tools:
         if tool_name == tool.name:
             return tool
-        
+
     raise ValueError(f"Tool with name {tool_name} not found")
 
 
